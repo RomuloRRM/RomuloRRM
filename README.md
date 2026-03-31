@@ -1,102 +1,28 @@
-// Lista que irá armazenar os nomes adicionados
-let amigos = [];
+# Olá, eu sou o Rômulo Mendes 👋
 
-// Adiciona um novo amigo à lista
-function adicionarAmigo() {
-    const input = document.getElementById('amigo');
-    let nome = input.value.trim();
+### 🚀 Desenvolvedor Backend | Java | Spring Boot | Python | AWS Cloud
 
-    // Validação: não permite vazio ou repetido
-    if (!nome) {
-        alert('Digite um nome válido!');
-        return;
-    }
-    if (amigos.includes(nome)) {
-        alert('Este nome já foi adicionado!');
-        input.value = '';
-        return;
-    }
+Atualmente sou estudante de **Ciência da Computação na FAM** e participante do programa **Escola da Nuvem (AWS re/Start)**. Meu foco principal é a transição de carreira para Engenharia de Software, unindo sólidas competências técnicas em Backend com a agilidade da computação em nuvem.
 
-    amigos.push(nome);
-    input.value = '';
-    atualizarLista();
-}
+---
 
-// Atualiza a lista de amigos exibida na tela
-function atualizarLista() {
-    const lista = document.getElementById('listaAmigos');
-    lista.innerHTML = '';
+### 🛠️ Minhas Tecnologias & Ferramentas
 
-    amigos.forEach((amigo, i) => {
-        const li = document.createElement('li');
-        li.textContent = amigo + ' ';
-        
-        // Botão para remover amigo
-        const btnRemove = document.createElement('button');
-        btnRemove.textContent = 'Remover';
-        btnRemove.style.marginLeft = '10px';
-        btnRemove.style.background = '#ff4444';
-        btnRemove.style.color = '#fff';
-        btnRemove.style.border = 'none';
-        btnRemove.style.borderRadius = '10px';
-        btnRemove.style.padding = '3px 10px';
-        btnRemove.style.cursor = 'pointer';
-        btnRemove.onclick = () => {
-            amigos.splice(i, 1);
-            atualizarLista();
-            limparResultado();
-        };
+* **Linguagens:** Java (Spring Boot), Python e SQL (MySQL/PostgreSQL).
+* **Cloud:** AWS (EC2, S3, IAM, VPC) - Em preparação para a certificação Cloud Practitioner.
+* **Dados:** Excel intemediário e análise de SLAs.
+* **Ferramentas:** Git, GitHub e IA Generativa para otimização de código.
 
-        li.appendChild(btnRemove);
-        lista.appendChild(li);
-    });
-}
+---
 
-// Limpa o resultado do sorteio
-function limparResultado() {
-    document.getElementById('resultado').innerHTML = '';
-}
+### 📈 Experiência & Soft Skills
 
-// Realiza o sorteio do amigo secreto
-function sortearAmigo() {
-    limparResultado();
+Além da tecnologia, atuo na área de **Negociação na Claro**, onde desenvolvi habilidades críticas de comunicação assertiva, resolução de problemas sob pressão e autonomia — competências que aplico diretamente no desenvolvimento de soluções robustas.
 
-    if (amigos.length < 2) {
-        alert('Adicione pelo menos dois amigos para sortear!');
-        return;
-    }
 
-    // Faz uma cópia da lista para embaralhar
-    let sorteados = [...amigos];
+### 📫 Como me encontrar
 
-    // Algoritmo de embaralhamento (Fisher-Yates)
-    for (let i = sorteados.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [sorteados[i], sorteados[j]] = [sorteados[j], sorteados[i]];
-    }
+* **LinkedIn:** [www.linkedin.com/in/romulorodriguesmendes]
+* **Email:** [romulo4667@gmail.com]
 
-    // Garante que ninguém tire a si mesmo
-    for (let i = 0; i < amigos.length; i++) {
-        if (amigos[i] === sorteados[i]) {
-            // Se alguém tirou a si mesmo, faz novo sorteio
-            sortearAmigo();
-            return;
-        }
-    }
-
-    // Exibe o resultado
-    const ul = document.getElementById('resultado');
-    ul.innerHTML = '';
-    for (let i = 0; i < amigos.length; i++) {
-        const li = document.createElement('li');
-        li.textContent = `${amigos[i]} → ${sorteados[i]}`;
-        ul.appendChild(li);
-    }
-}
-
-// Permite adicionar pressionando Enter no input
-document.getElementById('amigo').addEventListener('keyup', function (event) {
-    if (event.key === 'Enter') {
-        adicionarAmigo();
-    }
-});
+*"O objetivo em 6 meses é me tornar Engenheiro de Software Júnior. Foco no processo e evolução constante."*
